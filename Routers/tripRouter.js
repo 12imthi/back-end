@@ -1,19 +1,12 @@
-// src/routes/tripRoutes.js
 import express from 'express';
-import { addTrip,getAllTrip,getByIdTrip,updateTrip,deleteTrip } from '../Controllers/tripController.js';
-
+import { addTrip, getAllTripsByType, getByIdTrip, updateTrip, deleteTrip } from '../Controllers/tripController.js';
 
 const router = express.Router();
 
-router.post('/addtrip',addTrip);
-router.get('/getall',getAllTrip);
-router.get('/get-trip/:id',getByIdTrip);
-router.put('/update-trip/:id',updateTrip);
-router.delete('delete-trip/:id',deleteTrip);
-
-
-
-
-
+router.post('/', addTrip); // Create a new trip
+router.get('/', getAllTripsByType); // Get all trips by type
+router.get('/:id', getByIdTrip); // Get a trip by ID
+router.put('/:id', updateTrip); // Update a trip
+router.delete('/:id', deleteTrip); // Delete a trip
 
 export default router;
